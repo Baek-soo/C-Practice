@@ -1,0 +1,10 @@
+signed char : -127부터 127
+unsigned char : 0부터 255
+signed short :-32767부터 32767
+unsigned short : 0qnxj 65535
+signed int : -32767 부터 32767
+unsigned int : 0부터 65535
+signed long : -2147483647부터 2147483647
+unsigned long : 0부터 4294697295
+signed long long : -9223372036854775807부터 9223372036854775807
+unsigned long long : 0부터 18446744073709551615
