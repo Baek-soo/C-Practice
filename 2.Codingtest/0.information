@@ -8,3 +8,8 @@ signed long : -2147483647부터 2147483647
 unsigned long : 0부터 4294697295
 signed long long : -9223372036854775807부터 9223372036854775807
 unsigned long long : 0부터 18446744073709551615
+bool : 자료형으로 오로지 true나 false 두 가지 값만을 가진다. 
+
+cout : 콘솔 아웃이란 뜻, 콘솔 창에 출력 (ex. cout<<input<<endl;)
+cin : 콘솔 인 이라는 뜬, 콘솔 창에서 값을 입력 받음 (ex. cin>>input;)
+
