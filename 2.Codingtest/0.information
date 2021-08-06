@@ -1,3 +1,9 @@
+char : 1 byte
+short : 2 byte
+int : 4 byte  
+long : 4 byte
+float : 4 byte 자연수, 소수 모두 다 들어갈 수 있다. 자연수 일때는 10.f '.'을 붙이고 소수일 때는 1.32f만 쓴다.
+double : 8 byte float보다 2배 정도 더 정확하다. 
 signed char : -127부터 127
 unsigned char : 0부터 255
 signed short :-32767부터 32767
@@ -8,8 +14,13 @@ signed long : -2147483647부터 2147483647
 unsigned long : 0부터 4294697295
 signed long long : -9223372036854775807부터 9223372036854775807
 unsigned long long : 0부터 18446744073709551615
+long long int : -9223372036854775808부터 9223372036854775807 %lld
 bool : 자료형으로 오로지 true나 false 두 가지 값만을 가진다. 
 
 cout : 콘솔 아웃이란 뜻, 콘솔 창에 출력 (ex. cout<<input<<endl;)
 cin : 콘솔 인 이라는 뜬, 콘솔 창에서 값을 입력 받음 (ex. cin>>input;)
+
+변수 ? 값1 : 값2; : 변수의 참/거짓을 따져서 참이면 값1을 할당하고 거짓이면 값2를 할당한다.
+
+c++ 연산자 : https://ko.wikipedia.org/wiki/C%EC%99%80_C%2B%2B%EC%9D%98_%EC%97%B0%EC%82%B0%EC%9E%90
 

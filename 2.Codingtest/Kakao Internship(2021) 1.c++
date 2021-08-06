@@ -1,19 +1,30 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-long long solution(int price, int money, int count) {
-	for (int i = 1; i <= count; i++) {
-		money = money - price * i;
-	}
-	return -money;
+
+string solution(string new_id) {
+    for (char& ch : new_id) if ('A' <= ch && ch <= 'Z') ch |= 32;
+
+    string ret;
+    for (char& ch: new_id) {
+        if ('a' <= ch && ch <= 'z' ||
+            '0' <= ch && ch <= '9' ||
+            strchr("-_.", ch)) ret += ch;
+    }
+
+    new_id = ret;
+    ret.clear();
+    for (char& ch: new_id) {
+        if (!ret.empty() && ret.back() == '.' && ch == '.') continue;
+        ret += ch;
+    }
+
+    if (ret.front() == '.') ret.erase(ret.begin());
+    if (ret.back() == '.') ret.pop_back();
+
+    if (ret.empty()) ret = "a";
+    if (ret.size() >= 16) ret = ret.substr(0, 15);
+    if (ret.back() == '.') ret.pop_back();
+    while (ret.size() <= 2) ret += ret.back();
+
+    return ret;
 }
-
-
-// 미친 문제 풀이
-// #include <bits/stdc++.h>
-// using namespace std;
-
-// long long solution(int price, int money, int count)
-// {
-//     long long required = 1LL * price * count * (count + 1) / 2;
-//     return required <= money ? 0 : required - money;
-// }
