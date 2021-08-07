@@ -20,7 +20,15 @@ bool : 자료형으로 오로지 true나 false 두 가지 값만을 가진다.
 cout : 콘솔 아웃이란 뜻, 콘솔 창에 출력 (ex. cout<<input<<endl;)
 cin : 콘솔 인 이라는 뜬, 콘솔 창에서 값을 입력 받음 (ex. cin>>input;)
 
-변수 ? 값1 : 값2; : 변수의 참/거짓을 따져서 참이면 값1을 할당하고 거짓이면 값2를 할당한다.
+str1.at(index) : index에 숫자가 들어가게 되고, 해당위치(n)에 해당하는 문자를 반환하다.(ex. str1.at(0); "BlockDMask" --> B)
+str1.operator[index] : 일반 배열처럼 대괄호를 이용해서 string 인자에 접근 할 수 있다. at과는 다르게 index 범위를 검사하지 않으므로 at함수보다 빠르다.
+str1.front(); : string의 맨 앞 인자를 반환한다.
+str1.back(); : string 맨 뒤 인자를 반환한다. 
+str1.size(); : string의 사이즈를 반환한다. 
+str1.length(); : string의 길이를 반환한다. 
+str1.capacity(); : string에 할당된 메모리 크기(byte)를 반환한다.
+str1.resize(n); : string을 n 만큼의 크기로 만든다. 그 크기가 원래 사이즈보다 작다면 남은 스트링을 버리고 크다면 남은 공간은 원하는 string으로 채운다.(ex. str1.resize(10,'a') // "Block" -> " Block aaaa")
+str1.shrink_to_fit(); : 
 
 c++ 연산자 : https://ko.wikipedia.org/wiki/C%EC%99%80_C%2B%2B%EC%9D%98_%EC%97%B0%EC%82%B0%EC%9E%90
-
+변수 ? 값1 : 값2; : 변수의 참/거짓을 따져서 참이면 값1을 할당하고 거짓이면 값2를 할당한다.
