@@ -24,11 +24,16 @@ cout : 콘솔 아웃이란 뜻, 콘솔 창에 출력 (ex. cout<<input<<endl;)
 cin : 콘솔 인 이라는 뜬, 콘솔 창에서 값을 입력 받음 (ex. cin>>input;)
 
 
+*****list 관련*****
+sort(start, end, compare) : compare를 기준으로 start 부터 end까지 정렬한다. compare가 없을 경우는 start부터 end까지 오름차순으로 정렬한다. 
+
 *****string 관련*****
 str1.at(index) : index에 숫자가 들어가게 되고, 해당위치(n)에 해당하는 문자를 반환하다.(ex. str1.at(0); "BlockDMask" --> B)
 str1.operator[index] : 일반 배열처럼 대괄호를 이용해서 string 인자에 접근 할 수 있다. at과는 다르게 index 범위를 검사하지 않으므로 at함수보다 빠르다.
-str1.front(); : string의 맨 앞 인자를 반환한다.
-str1.back(); : string 맨 뒤 인자를 반환한다. 
+str1.front(); : string의 첫 번째 요소를 반환한다.
+str1.begin(); : string의 첫 번째 요소를 가리킨다. 
+str1.back(); : string 맨 마지막 요소를 반환한다.
+str1.end(); : string의 마지막 요소를 가리킨다.  
 str1.size(); : string의 사이즈를 반환한다. 
 str1.length(); : string의 길이를 반환한다. 
 str1.capacity(); : string에 할당된 메모리 크기(byte)를 반환한다.
