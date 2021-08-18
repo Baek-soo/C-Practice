@@ -31,16 +31,33 @@ sort(start, end, compare) : compare를 기준으로 start 부터 end까지 정�
 *****string 관련*****
 str1.at(index) : index에 숫자가 들어가게 되고, 해당위치(n)에 해당하는 문자를 반환하다.(ex. str1.at(0); "BlockDMask" --> B)
 str1.operator[index] : 일반 배열처럼 대괄호를 이용해서 string 인자에 접근 할 수 있다. at과는 다르게 index 범위를 검사하지 않으므로 at함수보다 빠르다.
-str1.front(); : string의 첫 번째 요소를 반환한다.
-str1.begin(); : string의 첫 번째 요소를 가리킨다. 
-str1.back(); : string 맨 마지막 요소를 반환한다.
-str1.end(); : string의 마지막 요소를 가리킨다.  
-str1.size(); : string의 사이즈를 반환한다. 
-str1.length(); : string의 길이를 반환한다. 
-str1.capacity(); : string에 할당된 메모리 크기(byte)를 반환한다.
+str1.front() : string의 첫 번째 요소를 반환한다.
+str1.back() : string 맨 마지막 요소를 반환한다.
+str1.size() : string 객체가 메모리에 실제 사용하고 있는 사이즈를 반환한다. 
+str1.length() : string의 길이를 반환한다. 
+str1.capacity() : string에 할당된 메모리 크기(byte)를 반환한다.
 str1.resize(n); : string을 n 만큼의 크기로 만든다. 그 크기가 원래 사이즈보다 작다면 남은 스트링을 버리고 크다면 남은 공간은 원하는 string으로 채운다.(ex. str1.resize(10,'a') // "Block" -> " Block aaaa")
-str1.shrink_to_fit(); : 
+str1.shrink_to_fit(); : 낭비되고 있는 메모리(capacity)를 줄임
+str1.reserve(n) : n만큼 미리 메모리를 할당해서 capacity가 사이즈에 맞게 계속 늘어나는 행위를 덜하게 해준다. -> 기능정하를 줄여준다.
+str1.empty() : 비어있는지 확인
+str1.begin() : string의 첫 번째 요소를 가리킨다. 
+str1.end() : string의 마지막 요소를 가리킨다. 
+str1.append(추가할문자열) :  추가할 문자열을 맨 끝에 추가함.
+str1.append(추가할문자열, 시작위치, 개수) : 추가할 문자열의 시작 위치부터 개수만큼만 끝에 추가함.
+str1.append(개수, 추가할문자) : 추가할 문자를 개수만큼 맨 끝에 추가함
+str1.compare(str2) : str1과 str2를 비교한다.
+str1.replace(대체할문자열의시작위치, 대체할문자열의길이, 새로운문자열)
+                string str1 = "C++ is very nice!";
+                string str2 = "nice";
+                string str3 = "awesome";
+                string::size_type index = str1.find(str2);
+                if (index != string::npos) {
+                    str1.replace(index, str2.length(), str3);
+                }
+                --> C++ is very awesome!
+ 
 
+cout << str1;
 
 *****c++ 연산자*****
 https://ko.wikipedia.org/wiki/C%EC%99%80_C%2B%2B%EC%9D%98_%EC%97%B0%EC%82%B0%EC%9E%90
@@ -69,3 +86,20 @@ priority_queue<type, vector<type>, 정렬기준> 변수이름; : vector<type>이
 .top() : queue의 우선순위가 제일 높은 값을 확인한다.
 .pop() : 우선순위가 제일 높은 값을 삭제한다. 
 .empty() : 우선순위 큐가 비어있는지 확인한다.
+
+
+*****메모리 동적 할당*****
+타입* 포인터이름 = new 타입; : 첫 번째 타입은 포인터를 선언하기 위해, 두 번째 타입은 메모리 종류를 지정하기 위해 사용된다.
+delete 포인터이름; : C언어에서의 free()함수와 마찬가지로 동적으로 할당받은 메모리를 다시 반환한다.
+                //ex. int* ptr_int = new int;
+	                 *ptr_int = 100;
+
+	                 double* ptr_double = new double;
+	                 *ptr_double = 100.123;
+
+	                 cout << "int형 숫자의 값은" << *ptr_int << "입니다." << endl;
+	                 cout << "int형 숫자의 메모리 주소는" << ptr_int << "입니다." << endl;
+	                 cout << "double형 숫자의 값은" << *ptr_double << "입니다." << endl;
+	                 cout << "double형 숫자의 메모리 주소는" << ptr_double << "입니다." << endl;
+                 	 delete ptr_int;
+	                 delete ptr_double;
